@@ -16,7 +16,7 @@ fetch('https://opentdb.com/api.php?amount=15&category=20&type=multiple')
     $('#start').on('click', function() {
       $('.container').html('');
       // poner las alternativas en un arreglo
-      let alternatives = [];
+      var alternatives = [];
       alternatives.push(data.results[counter].incorrect_answers[0]);
       alternatives.push(data.results[counter].incorrect_answers[1]);
       alternatives.push(data.results[counter].incorrect_answers[2]);
@@ -29,9 +29,27 @@ fetch('https://opentdb.com/api.php?amount=15&category=20&type=multiple')
       let alternativesDisplay = alternatives.forEach(function(element) {
         $('.container').append(`<a class="btn option">${element}</a>`);
       });
-      //console.log(data.results[counter].question);
+      // console.log(data.results[counter].question);
       counter++;
     });
+    // evento sobre el boton de las respuestas
+    $('.option').on('click', function() {
+    // si la respuesta es correcta
+      if ($(this) === data.results[counter].correct_answer) {
+      // se muestra pantalla correcta y sumar una buena
+        $('#start').text('Next');
+        $('#start').show();
+      } else {
+        // se muestra pantalla incorrecta
+        $('#start').text('Next');
+        $('#start').show();
+      }
+    });
+    // if (count > 15) {
+    // se pasa a la pantalla del final
+    // contiene respuestas correctas
+    // contiene tu puntaje
+    // }
   })
   .catch(function(error) {
   });
