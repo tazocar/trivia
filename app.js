@@ -12,18 +12,24 @@ fetch('https://opentdb.com/api.php?amount=15&category=20&type=multiple')
   })
   .then(function(data) {
     console.log(data);
-    var counter = 0;
+    let counter = 0;
     $('#start').on('click', function() {
+      $('.container').html('');
       // poner las alternativas en un arreglo
-      var alternatives = [];
-      alternatives.push(data.results[0].incorrect_answers[0]);
-      alternatives.push(data.results[0].incorrect_answers[1]);
-      alternatives.push(data.results[0].incorrect_answers[2]);
-      alternatives.push(data.results[0].correct_answer);
+      let alternatives = [];
+      alternatives.push(data.results[counter].incorrect_answers[0]);
+      alternatives.push(data.results[counter].incorrect_answers[1]);
+      alternatives.push(data.results[counter].incorrect_answers[2]);
+      alternatives.push(data.results[counter].correct_answer);
       // ordenarlas para que la respuesta correcta no esté siempre en la misma posición
       alternatives.sort();
-      // si la respuesta está correcta
-      console.log(data.results[counter].question);
+      // crear elementos
+      let question = $('<h2 class="question">').text(`${data.results[counter].question}`);
+      $('.container').append(question);
+      let alternativesDisplay = alternatives.forEach(function(element) {
+        $('.container').append(`<a class="btn option">${element}</a>`);
+      });
+      //console.log(data.results[counter].question);
       counter++;
     });
   })
