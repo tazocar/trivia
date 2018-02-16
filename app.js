@@ -5,4 +5,6 @@ fetch('https://opentdb.com/api.php?amount=15&category=20&type=multiple')
   })
   .then(function(data) {
     console.log(data);
+  })
+  catch(function(error){
   });
