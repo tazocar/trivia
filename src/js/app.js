@@ -1,10 +1,3 @@
-/* console.log(data.results[0].question);
-console.log(data.results[0].incorrect_answers[0]);
-console.log(data.results[0].incorrect_answers[1]);
-console.log(data.results[0].incorrect_answers[2]);
-console.log(data.results[0].correct_answer);
-console.log(data.results[0].difficulty);
-console.log(data.results[0].category);*/
 // inicio sesión con firebase
 $(document).ready(function() {
   // para que siempre esté deslogeado
@@ -69,9 +62,6 @@ function GoogleSignUp() {
   }
 }
 
-let anime = 'https://opentdb.com/api.php?amount=15&category=31&type=multiple';
-let cience = 'https://opentdb.com/api.php?amount=15&category=20&type=multiple';
-let animals = 'https://opentdb.com/api.php?amount=10&encode=base64';
 $('.trueFalse').hide();
 $('.multiple').hide();
 $('#start').hide();
@@ -124,7 +114,7 @@ function displayQuestions(typeChoice) {
         // ordenarlas para que la respuesta correcta no esté siempre en la misma posición
         alternatives.sort();
         // crear elementos
-        let question = $('<h2 class="question">').text(`${data.results[counter].question}`);
+        let question = $('<h2 class="question">').html(`${data.results[counter].question}`);
         let category = $('<p class="categoryDifficulty">').html(`Category: <span class="displayInfo"> ${data.results[counter].category}</span>`);
         let difficulty = $('<p class="categoryDifficulty">').html(`Difficulty: <span class="displayInfo">${data.results[counter].difficulty}</span>`);
         $('.container').append(category, difficulty, question);
@@ -154,7 +144,7 @@ function displayQuestions(typeChoice) {
             $('.title').text('Awwww wrong answer!');
             $('.title').show();
             $('.result').html('<img src="src/images/close.png" alt="" class="answer">');
-            let answer = $('<p class="correctAnswer">').text(`Correct answer is " ${data.results[counter].correct_answer}`);
+            let answer = $('<p class="correctAnswer">').html(`Correct answer is: ${data.results[counter].correct_answer}`);
             $('.container').append(answer);
           }
           counter++;
