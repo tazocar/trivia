@@ -12,6 +12,7 @@ let animals = 'https://opentdb.com/api.php?amount=10&encode=base64';
 $('.trueFalse').hide();
 $('.multiple').hide();
 $('#start').hide(); 
+
 $('.choices').on('click', function() {
   $('.choices').hide();
   $('.trueFalse').show();
