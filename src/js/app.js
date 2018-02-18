@@ -160,7 +160,7 @@ function displayQuestions(typeChoice) {
             });
           }
         });
-      });
+      }); 
     })
     .catch(function(error) {
     });
