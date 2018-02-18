@@ -6,12 +6,30 @@
   <title>Trivia</title>
    <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h2 class="title">Welcome to Trivia</h2>
-  <button class="btn" id="start">Start</button>
+  <nav class="nav">
+    <a href="#" class="brand-logo"> < TriviaToria ></a>
+  </nav>
+  <h2 class="title">Welcome to TriviaToria</h2>
+  <div class="result"></div>
   <div class="container"></div>
+  <button class="btn" id="start">Start</button>
+  
+  <button class="btn trueFalse choicesDisplay">True/False</button>
+  <button class="btn multiple choicesDisplay">Multiple</button>
+  <button class="btn choices choicesDisplay" data-api="https://opentdb.com/api.php?amount=15&category=31">Anime</button>
+  <button class="btn choices choicesDisplay" data-api="https://opentdb.com/api.php?amount=15&category=27">Animals</button>
+  <button class="btn choices choicesDisplay" data-api="https://opentdb.com/api.php?amount=15&category=9">General Knowledge</button>
+  <button class="btn choices choicesDisplay" data-api="https://opentdb.com/api.php?amount=10&category=19">Maths</button>
+  <button class="btn choices choicesDisplay" data-api="https://opentdb.com/api.php?amount=15&category=15">Video Games</button>
+
+  <!-- <button href="" class="answers">Lorem ipsum dolor sit amet, consectetur adipisicing.</button>
+  <button href="" class="answers">Lorem ipsum dolor sit amet, consectetur adipisicing.</button>
+  <button href="" class="answers">Lorem ipsum dolor sit amet, consectetur adipisicing.</button>
+  <button href="" class="correctAnswer">Lorem ipsum dolor sit amet, consectetur adipisicing.</button> -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
